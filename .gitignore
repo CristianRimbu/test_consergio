@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.vite/
+*.blend1
+.DS_Store
+*.log

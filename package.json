@@ -1,0 +1,31 @@
+{
+  "name": "consergio-landing",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "models": "cd blender && blender -b -P build_logo.py && blender -b -P build_hotel.py && cd .. && npm run compress",
+    "compress": "cp public/models/hotel.glb blender/hotel_uncompressed.glb && cp public/models/logo.glb blender/logo_uncompressed.glb && npx -y @gltf-transform/cli meshopt public/models/hotel.glb public/models/hotel.glb && npx -y @gltf-transform/cli meshopt public/models/logo.glb public/models/logo.glb"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "@react-three/postprocessing": "^3.2.1",
+    "lenis": "^1.3.27",
+    "postprocessing": "^6.39.5",
+    "qrcode": "^1.5.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "vite": "^8.3.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
